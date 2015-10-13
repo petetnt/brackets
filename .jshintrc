@@ -65,6 +65,7 @@
         "PathUtils": false,
         "window": false,
         "navigator": false,
-        "Mustache": false
+        "Mustache": false,
+        "Intl": false
     }
 }

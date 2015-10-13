@@ -23,7 +23,7 @@
 
 
 /*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
-/*global define, $, brackets, window, Mustache */
+/*global define, $, brackets, window, Mustache, Intl */
 
 define(function (require, exports, module) {
     "use strict";
@@ -73,10 +73,13 @@ define(function (require, exports, module) {
     }
 
     function _handleAboutDialog() {
+        var intlOptions =  {weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: "numeric", minute: "numeric", "second": "numeric", timeZoneName: 'short'};
+        var localizedBuildTimeStamp = Intl.DateTimeFormat(brackets.getLocale(), intlOptions).format(new Date(brackets.config.build_timestamp));
+        
         var templateVars = {
             ABOUT_ICON          : brackets.config.about_icon,
             APP_NAME_ABOUT_BOX  : brackets.config.app_name_about,
-            BUILD_TIMESTAMP     : brackets.config.build_timestamp,
+            BUILD_TIMESTAMP     : localizedBuildTimeStamp,
             BUILD_INFO          : buildInfo || "",
             Strings             : Strings
         };
