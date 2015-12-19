@@ -39,7 +39,7 @@ define(function (require, exports, module) {
         Strings             = brackets.getModule("strings"),
         ThemeManager        = brackets.getModule("view/ThemeManager"),
         CodeInspection      = brackets.getModule("language/CodeInspection"),
-        _                   = brackets.getModule("thirdparty/lodash"),
+        _                   = brackets.getModule("lodash"),
         languages           = LanguageManager.getLanguages(),
         isPrefDocument      = false,
         isPrefHintsEnabled  = false;

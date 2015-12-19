@@ -37,7 +37,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     /**
      * The view state cache.

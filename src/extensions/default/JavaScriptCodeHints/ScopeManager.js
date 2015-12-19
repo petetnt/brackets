@@ -34,9 +34,9 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = brackets.getModule("thirdparty/lodash");
+    var _ = brackets.getModule("lodash");
 
-    var CodeMirror          = brackets.getModule("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror          = brackets.getModule("codemirror/lib/codemirror"),
         DefaultDialogs      = brackets.getModule("widgets/DefaultDialogs"),
         Dialogs             = brackets.getModule("widgets/Dialogs"),
         DocumentManager     = brackets.getModule("document/DocumentManager"),

@@ -38,7 +38,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     // Load dependent modules
     var TextRange           = require("document/TextRange").TextRange,

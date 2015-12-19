@@ -48,7 +48,7 @@ define(function (require, exports, module) {
         Commands        = require("command/Commands"),
         Strings         = require("strings"),
         Resizer         = require("utils/Resizer"),
-        _               = require("thirdparty/lodash");
+        _               = require("lodash");
 
     // These vars are initialized by the htmlReady handler
     // below since they refer to DOM elements

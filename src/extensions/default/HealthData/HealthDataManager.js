@@ -32,8 +32,8 @@ define(function (require, exports, module) {
         PreferencesManager  = brackets.getModule("preferences/PreferencesManager"),
         UrlParams           = brackets.getModule("utils/UrlParams").UrlParams,
         Strings             = brackets.getModule("strings"),
-        HealthDataUtils     = require("HealthDataUtils"),
-        uuid                = require("thirdparty/uuid");
+        uuid                = require("uuid"),
+        HealthDataUtils     = require("HealthDataUtils");
 
     var prefs      = PreferencesManager.getExtensionPrefs("healthData");
 

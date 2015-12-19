@@ -45,7 +45,7 @@ define(function (require, exports, module) {
         ThemeSettings       = require("view/ThemeSettings"),
         MainViewManager     = require("view/MainViewManager"),
         AppInit             = require("utils/AppInit"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     var prefs = PreferencesManager.getExtensionPrefs("fonts");
 

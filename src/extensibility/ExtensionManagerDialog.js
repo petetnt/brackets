@@ -27,7 +27,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _                           = require("thirdparty/lodash"),
+    var _                           = require("lodash"),
         Dialogs                     = require("widgets/Dialogs"),
         DefaultDialogs              = require("widgets/DefaultDialogs"),
         FileSystem                  = require("filesystem/FileSystem"),

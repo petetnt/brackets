@@ -68,7 +68,7 @@ define(function (require, exports, module) {
 
     var AnimationUtils     = require("utils/AnimationUtils"),
         Async              = require("utils/Async"),
-        CodeMirror         = require("thirdparty/CodeMirror/lib/codemirror"),
+        CodeMirror         = require("codemirror/lib/codemirror"),
         LanguageManager    = require("language/LanguageManager"),
         EventDispatcher    = require("utils/EventDispatcher"),
         Menus              = require("command/Menus"),
@@ -81,7 +81,7 @@ define(function (require, exports, module) {
         ValidationUtils    = require("utils/ValidationUtils"),
         ViewUtils          = require("utils/ViewUtils"),
         MainViewManager    = require("view/MainViewManager"),
-        _                  = require("thirdparty/lodash");
+        _                  = require("lodash");
 
     /** Editor preferences */
     var CLOSE_BRACKETS      = "closeBrackets",

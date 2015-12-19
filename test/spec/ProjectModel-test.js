@@ -28,7 +28,7 @@ define(function (require, exports, module) {
     "use strict";
 
     var ProjectModel = require("project/ProjectModel"),
-        Immutable = require("thirdparty/immutable");
+        Immutable = require("immutable");
 
     describe("ProjectModel", function () {
         describe("shouldShow", function () {

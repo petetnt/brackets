@@ -34,8 +34,8 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var Immutable           = require("thirdparty/immutable"),
-        _                   = require("thirdparty/lodash"),
+    var Immutable           = require("immutable"),
+        _                   = require("lodash"),
         EventDispatcher     = require("utils/EventDispatcher"),
         FileUtils           = require("file/FileUtils");
 

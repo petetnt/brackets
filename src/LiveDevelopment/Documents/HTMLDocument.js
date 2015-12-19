@@ -52,7 +52,7 @@ define(function HTMLDocumentModule(require, exports, module) {
         LiveDevelopment     = require("LiveDevelopment/LiveDevelopment"),
         PerfUtils           = require("utils/PerfUtils"),
         RemoteAgent         = require("LiveDevelopment/Agents/RemoteAgent"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     /**
      * @constructor

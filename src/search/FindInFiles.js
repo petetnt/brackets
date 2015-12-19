@@ -30,7 +30,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _                     = require("thirdparty/lodash"),
+    var _                     = require("lodash"),
         FileFilters           = require("search/FileFilters"),
         Async                 = require("utils/Async"),
         StringUtils           = require("utils/StringUtils"),

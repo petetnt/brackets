@@ -26,7 +26,7 @@
 define(function (require, exports, module) {
     'use strict';
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     var BootstrapReporterView = function (doc, reporter) {
         doc = doc || document;

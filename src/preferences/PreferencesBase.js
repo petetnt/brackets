@@ -62,7 +62,7 @@ define(function (require, exports, module) {
         FileSystem      = require("filesystem/FileSystem"),
         FileSystemError = require("filesystem/FileSystemError"),
         EventDispatcher = require("utils/EventDispatcher"),
-        _               = require("thirdparty/lodash"),
+        _               = require("lodash"),
         Async           = require("utils/Async"),
         globmatch       = require("thirdparty/globmatch");
 

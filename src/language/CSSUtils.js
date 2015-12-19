@@ -31,7 +31,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var CodeMirror          = require("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror          = require("codemirror/lib/codemirror"),
         Async               = require("utils/Async"),
         DocumentManager     = require("document/DocumentManager"),
         EditorManager       = require("editor/EditorManager"),
@@ -39,7 +39,7 @@ define(function (require, exports, module) {
         LanguageManager     = require("language/LanguageManager"),
         ProjectManager      = require("project/ProjectManager"),
         TokenUtils          = require("utils/TokenUtils"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     // Constants
     var SELECTOR   = "selector",

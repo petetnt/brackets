@@ -27,8 +27,8 @@
 define(function (require, exports, module) {
     "use strict";
     var FileTreeViewModel = require("project/FileTreeViewModel"),
-        _ = require("thirdparty/lodash"),
-        Immutable = require("thirdparty/immutable");
+        _ = require("lodash"),
+        Immutable = require("immutable");
 
     describe("FileTreeViewModel", function () {
         describe("_filePathToObjectPath", function () {

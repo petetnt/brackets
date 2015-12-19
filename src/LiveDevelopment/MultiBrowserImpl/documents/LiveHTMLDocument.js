@@ -37,7 +37,7 @@ define(function (require, exports, module) {
 
     var EventDispatcher     = require("utils/EventDispatcher"),
         PerfUtils           = require("utils/PerfUtils"),
-        _                   = require("thirdparty/lodash"),
+        _                   = require("lodash"),
         LiveDocument        = require("LiveDevelopment/MultiBrowserImpl/documents/LiveDocument"),
         HTMLInstrumentation = require("LiveDevelopment/MultiBrowserImpl/language/HTMLInstrumentation");
 

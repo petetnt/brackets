@@ -33,8 +33,8 @@ define(function (require, exports, module) {
         HTMLUtils       = brackets.getModule("language/HTMLUtils"),
         HintUtils       = require("HintUtils"),
         ScopeManager    = require("ScopeManager"),
-        Acorn           = require("thirdparty/acorn/acorn"),
-        Acorn_Loose     = require("thirdparty/acorn/acorn_loose");
+        Acorn           = require("acorn/acorn"),
+        Acorn_Loose     = require("acorn/acorn_loose");
 
     /**
      * Session objects encapsulate state associated with a hinting session

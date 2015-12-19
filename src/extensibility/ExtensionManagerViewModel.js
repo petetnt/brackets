@@ -28,7 +28,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     var ExtensionManager = require("extensibility/ExtensionManager"),
         registry_utils   = require("extensibility/registry_utils"),

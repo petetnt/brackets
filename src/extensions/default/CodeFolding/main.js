@@ -30,7 +30,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var CodeMirror              = brackets.getModule("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror              = brackets.getModule("codemirror/lib/codemirror"),
         Strings                 = brackets.getModule("strings"),
         AppInit                 = brackets.getModule("utils/AppInit"),
         CommandManager          = brackets.getModule("command/CommandManager"),

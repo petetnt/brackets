@@ -31,14 +31,14 @@ define(function (require, exports, module) {
     "use strict";
 
     // Load JSLint, a non-module lib
-    require("thirdparty/jslint/jslint");
+    require("jslint");
 
     // Load dependent modules
     var CodeInspection     = brackets.getModule("language/CodeInspection"),
         Editor             = brackets.getModule("editor/Editor").Editor,
         PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
         Strings            = brackets.getModule("strings"),
-        _                  = brackets.getModule("thirdparty/lodash");
+        _                  = brackets.getModule("lodash");
 
     var prefs = PreferencesManager.getExtensionPrefs("jslint");
 

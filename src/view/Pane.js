@@ -155,7 +155,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _                   = require("thirdparty/lodash"),
+    var _                   = require("lodash"),
         EventDispatcher     = require("utils/EventDispatcher"),
         FileSystem          = require("filesystem/FileSystem"),
         InMemoryFile        = require("document/InMemoryFile"),

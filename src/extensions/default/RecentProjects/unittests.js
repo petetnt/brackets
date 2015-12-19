@@ -30,7 +30,7 @@ define(function (require, exports, module) {
     var SpecRunnerUtils = brackets.getModule("spec/SpecRunnerUtils"),
         FileUtils       = brackets.getModule("file/FileUtils"),
         KeyEvent        = brackets.getModule("utils/KeyEvent"),
-        _               = brackets.getModule("thirdparty/lodash");
+        _               = brackets.getModule("lodash");
 
     describe("Recent Projects", function () {
         var extensionPath = FileUtils.getNativeModuleDirectoryPath(module),

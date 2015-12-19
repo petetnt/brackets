@@ -39,7 +39,7 @@ define(function HighlightAgent(require, exports, module) {
         Inspector       = require("LiveDevelopment/Inspector/Inspector"),
         LiveDevelopment = require("LiveDevelopment/LiveDevelopment"),
         RemoteAgent     = require("LiveDevelopment/Agents/RemoteAgent"),
-        _               = require("thirdparty/lodash");
+        _               = require("lodash");
 
     var _highlight = {}; // active highlight
 

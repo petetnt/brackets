@@ -29,17 +29,57 @@
  * configuration and loads the brackets module.
  */
 require.config({
+    nodeRequire: true,
     paths: {
-        "text"              : "thirdparty/text/text",
-        "i18n"              : "thirdparty/i18n/i18n",
-
         // The file system implementation. Change this value to use different
         // implementations (e.g. cloud-based storage).
-        "fileSystemImpl"    : "filesystem/impls/appshell/AppshellFileSystem"
+        "fileSystemImpl"    : "filesystem/impls/appshell/AppshellFileSystem",
+		
+        // Third party dependencies
+     
+        "jquery":                    "../node_modules/jquery/dist/jquery",
+        "less":                      "../node_modules/less/dist/less",
+        "mustache":                  "../node_modules/mustache/mustache",
+        "text":                      "../node_modules/text/text",
+        "i18n":                      "../node_modules/i18n/i18n",
+        "classnames":                "../node_modules/classnames/index",
+        "react":                     "../node_modules/react/dist/react",
+        "react-dom":                 "../node_modules/react-dom/dist/react-dom",
+        "react-addons-test-utils":   "../node_modules/react-addons-test-utils/index",
+        "immutable":                 "../node_modules/immutable/dist/immutable",
+        "lodash":                    "../node_modules/lodash/index",
+        "uuid":                      "../node_modules/node-uuid/uuid",
+        "tinycolor":                 "../node_modules/tinycolor2/tinycolor",
+        "jslint":                    "../node_modules/jslint/lib/jslint",
+        "tern":                      "../node_modules/tern/lib/tern",
+        "acorn":                     "../node_modules/acord/dist/acorn",
+        "acorn_loose":               "../node_modules/acord/dist/acorn_loose",
+        "codemirror":                "../node_modules/codemirror"
+    },
+    shim: {
+        "react-dom": {
+            "deps": ["react"]
+        }
     },
     map: {
         "*": {
-            "thirdparty/CodeMirror2": "thirdparty/CodeMirror"
+            // Extensions might use the deprecated versions...
+            "thirdparty/text":        "../node_modules/text/text",
+            "thirdparty/i18n":        "../node_modules/i18n/i18n",
+            "thirdparty/classnames":  "classnames",
+            "thirdparty/react":       "react",
+            "thirdparty/immutable":   "immutable",
+            "thirdparty/lodash":      "lodash",
+            "thirdparty/less":        "less",
+            "thirdparty/mustache":    "mustache",
+            "thirdparty/uuid":        "uuid",
+            "thirdparty/tinycolor":   "tinycolor",
+            "thirdparty/jslint":      "jslint",
+            "thirdparty/tern":        "tern",
+            "thirdparty/acorn":       "acorn",
+            "thirdparty/acorn_loose": "acorn_loose",
+            "thirdparty/CodeMirror2": "codemirror",
+            "thirdparty/CodeMirror":  "codemirror"
         }
     }
 });
@@ -69,8 +109,14 @@ define(function (require) {
     "use strict";
 
     // Load compatibility shims--these need to load early, be careful moving this
-    require(["utils/Compatibility"], function () {
+    require(["jquery", "mustache", "less", "utils/Compatibility"], function (jQuery, Mustache, less) {
         // Load the brackets module. This is a self-running module that loads and runs the entire application.
+        
+        // These should be required instead of exposed as globals
+        window.$ = window.jQuery = jQuery;
+        window.Mustache = Mustache;
+        window.less = less;
+        
         require(["brackets"]);
     });
 });

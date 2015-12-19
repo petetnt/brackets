@@ -31,7 +31,7 @@ define(function (require, exports, module) {
         FileSystem       = require("filesystem/FileSystem"),
         StringUtils      = require("utils/StringUtils"),
         Strings          = require("strings"),
-        _                = require("thirdparty/lodash");
+        _                = require("lodash");
 
     describe("Code Inspection", function () {
         this.category = "integration";

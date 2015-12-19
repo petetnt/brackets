@@ -66,7 +66,7 @@ define(function LiveDevelopment(require, exports, module) {
 
     require("utils/Global");
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     // Status Codes
     var STATUS_ERROR          = exports.STATUS_ERROR          = -1;

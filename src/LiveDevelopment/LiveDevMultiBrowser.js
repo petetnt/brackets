@@ -83,7 +83,7 @@ define(function (require, exports, module) {
         PreferencesDialogs   = require("preferences/PreferencesDialogs"),
         ProjectManager       = require("project/ProjectManager"),
         Strings              = require("strings"),
-        _                    = require("thirdparty/lodash"),
+        _                    = require("lodash"),
         LiveDevelopmentUtils = require("LiveDevelopment/LiveDevelopmentUtils"),
         LiveDevServerManager = require("LiveDevelopment/LiveDevServerManager"),
         NodeSocketTransport  = require("LiveDevelopment/MultiBrowserImpl/transports/NodeSocketTransport"),

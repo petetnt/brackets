@@ -32,7 +32,7 @@ define(function (require, exports, module) {
     "use strict";
 
     // Load dependent modules
-    var _                    = require("thirdparty/lodash"),
+    var _                    = require("lodash"),
         AnimationUtils       = require("utils/AnimationUtils"),
         AppInit              = require("utils/AppInit"),
         DropdownButton       = require("widgets/DropdownButton").DropdownButton,

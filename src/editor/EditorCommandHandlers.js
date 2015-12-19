@@ -38,8 +38,8 @@ define(function (require, exports, module) {
         EditorManager      = require("editor/EditorManager"),
         StringUtils        = require("utils/StringUtils"),
         TokenUtils         = require("utils/TokenUtils"),
-        CodeMirror         = require("thirdparty/CodeMirror/lib/codemirror"),
-        _                  = require("thirdparty/lodash");
+        CodeMirror         = require("codemirror/lib/codemirror"),
+        _                  = require("lodash");
 
     /**
      * List of constants

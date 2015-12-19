@@ -36,7 +36,7 @@ define(function (require, exports, module) {
         StringUtils         = require("utils/StringUtils"),
         FileSystem          = require("filesystem/FileSystem"),
         FileUtils           = require("file/FileUtils"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
 
     var _viewers = {};

@@ -37,7 +37,7 @@ define(function (require, exports, module) {
         LanguageManager = require("language/LanguageManager"),
         StringUtils     = require("utils/StringUtils"),
         Strings         = require("strings"),
-        _               = require("thirdparty/lodash");
+        _               = require("lodash");
 
     var PreferencesManager;
 

@@ -46,7 +46,7 @@ define(function (require, exports, module) {
         Strings             = require("strings"),
         StringUtils         = require("utils/StringUtils"),
         UrlParams           = require("utils/UrlParams").UrlParams,
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     var KeyboardPrefs       = JSON.parse(require("text!base-config/keyboard.json"));
 

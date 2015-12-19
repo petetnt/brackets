@@ -45,8 +45,8 @@ define(function (require, exports, module) {
         FindUtils           = require("search/FindUtils"),
         FindInFilesUI       = require("search/FindInFilesUI"),
         ScrollTrackMarkers  = require("search/ScrollTrackMarkers"),
-        _                   = require("thirdparty/lodash"),
-        CodeMirror          = require("thirdparty/CodeMirror/lib/codemirror");
+        _                   = require("lodash"),
+        CodeMirror          = require("codemirror/lib/codemirror");
 
     /**
      * Maximum file size to search within (in chars)

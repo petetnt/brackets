@@ -132,13 +132,13 @@ define(function (require, exports, module) {
 
 
     // Dependencies
-    var CodeMirror            = require("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror            = require("codemirror/lib/codemirror"),
         EventDispatcher       = require("utils/EventDispatcher"),
         Async                 = require("utils/Async"),
         FileUtils             = require("file/FileUtils"),
         Strings               = require("strings"),
         _defaultLanguagesJSON = require("text!language/languages.json"),
-        _                     = require("thirdparty/lodash"),
+        _                     = require("lodash"),
 
         // PreferencesManager is loaded near the end of the file
         PreferencesManager;

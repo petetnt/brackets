@@ -35,7 +35,7 @@ define(function (require, exports, module) {
         Commands            = require("command/Commands"),
         FileSystemError     = require("filesystem/FileSystemError"),
         SpecRunnerUtils     = require("spec/SpecRunnerUtils"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
 
     describe("ProjectManager", function () {

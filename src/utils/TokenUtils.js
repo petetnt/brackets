@@ -33,8 +33,8 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _           = require("thirdparty/lodash"),
-        CodeMirror  = require("thirdparty/CodeMirror/lib/codemirror");
+    var _           = require("lodash"),
+        CodeMirror  = require("codemirror/lib/codemirror");
 
     var cache;
 

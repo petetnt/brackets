@@ -34,8 +34,8 @@ define(function (require, exports, module) {
         InMemoryFile        = require("document/InMemoryFile"),
         PerfUtils           = require("utils/PerfUtils"),
         LanguageManager     = require("language/LanguageManager"),
-        CodeMirror          = require("thirdparty/CodeMirror/lib/codemirror"),
-        _                   = require("thirdparty/lodash");
+        CodeMirror          = require("codemirror/lib/codemirror"),
+        _                   = require("lodash");
 
     /**
      * Model for the contents of a single file and its current modification state.

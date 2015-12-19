@@ -30,10 +30,10 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     // Load brackets modules
-    var CodeMirror              = require("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror              = require("codemirror/lib/codemirror"),
         Async                   = require("utils/Async"),
         DocumentManager         = require("document/DocumentManager"),
         ChangedDocumentTracker  = require("document/ChangedDocumentTracker"),

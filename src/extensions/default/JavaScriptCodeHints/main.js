@@ -27,7 +27,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _ = brackets.getModule("thirdparty/lodash");
+    var _ = brackets.getModule("lodash");
 
     var CodeHintManager      = brackets.getModule("editor/CodeHintManager"),
         EditorManager        = brackets.getModule("editor/EditorManager"),
@@ -44,7 +44,7 @@ define(function (require, exports, module) {
         HintUtils            = require("HintUtils"),
         ScopeManager         = require("ScopeManager"),
         Session              = require("Session"),
-        Acorn                = require("thirdparty/acorn/acorn");
+        Acorn                = require("acorn/acorn");
 
     var session            = null,  // object that encapsulates the current session state
         cachedCursor       = null,  // last cursor of the current hinting session

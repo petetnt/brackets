@@ -33,7 +33,7 @@ define(function (require, exports, module) {
         CommandManager      = require("command/CommandManager"),
         PreferencesManager  = require("preferences/PreferencesManager"),
         Strings             = require("strings"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     // Constants for the preferences referred to in this file
     var SHOW_LINE_NUMBERS = "showLineNumbers",

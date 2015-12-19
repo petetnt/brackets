@@ -29,10 +29,10 @@ define(function (require, exports, module) {
 
     var FileTreeView      = require("project/FileTreeView"),
         FileTreeViewModel = require("project/FileTreeViewModel"),
-        React             = require("thirdparty/react"),
-        Immutable         = require("thirdparty/immutable"),
-        RTU               = React.addons.TestUtils,
-        _                 = require("thirdparty/lodash");
+        React             = require("react"),
+        Immutable         = require("immutable"),
+        RTU               = require("react-addons-test-utils"),
+        _                 = require("lodash");
 
     describe("FileTreeView", function () {
 

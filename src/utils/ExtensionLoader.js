@@ -39,7 +39,7 @@ define(function (require, exports, module) {
 
     require("utils/Global");
 
-    var _              = require("thirdparty/lodash"),
+    var _              = require("lodash"),
         EventDispatcher = require("utils/EventDispatcher"),
         FileSystem     = require("filesystem/FileSystem"),
         FileUtils      = require("file/FileUtils"),
@@ -64,11 +64,14 @@ define(function (require, exports, module) {
     // The native directory path ends with either "test" or "src". We need "src" to
     // load the text and i18n modules.
     srcPath = srcPath.replace(/\/test$/, "/src"); // convert from "test" to "src"
-
-    var globalConfig = {
-            "text" : srcPath + "/thirdparty/text/text",
-            "i18n" : srcPath + "/thirdparty/i18n/i18n"
-        };
+	
+	// Fugly fix for not duplicating the paths here... fixes #1087 though ^^
+	var globalConfig = {};
+	var parentContext = window.requirejs.s.contexts._.config.paths;
+	
+    Object.keys(parentContext).forEach(function (value) {
+		globalConfig[value] = srcPath.split("/src")[0] + "/" + parentContext[value].split("../")[1];
+	});
 
     /**
      * Returns the full path of the default user extensions directory. This is in the users

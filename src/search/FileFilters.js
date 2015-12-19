@@ -31,7 +31,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _                  = require("thirdparty/lodash"),
+    var _                  = require("lodash"),
         Dialogs            = require("widgets/Dialogs"),
         DropdownButton     = require("widgets/DropdownButton").DropdownButton,
         StringUtils        = require("utils/StringUtils"),

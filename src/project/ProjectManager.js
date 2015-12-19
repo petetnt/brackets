@@ -46,7 +46,7 @@ define(function (require, exports, module) {
 
     require("utils/Global");
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     // Load dependent modules
     var AppInit             = require("utils/AppInit"),

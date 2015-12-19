@@ -32,17 +32,19 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var React             = require("thirdparty/react"),
-        Classnames        = require("thirdparty/classnames"),
-        Immutable         = require("thirdparty/immutable"),
-        _                 = require("thirdparty/lodash"),
+    var React             = require("react"),
+        ReactDOM          = require("react-dom"),
+        Classnames        = require("classnames"),
+        Immutable         = require("immutable"),
+        _                 = require("lodash"),
         FileUtils         = require("file/FileUtils"),
         LanguageManager   = require("language/LanguageManager"),
         FileTreeViewModel = require("project/FileTreeViewModel"),
         ViewUtils         = require("utils/ViewUtils"),
         KeyEvent          = require("utils/KeyEvent");
+    
 
-    var DOM = React.DOM;
+	var DOM = React.DOM;
 
     /**
      * @private
@@ -141,12 +143,12 @@ define(function (require, exports, module) {
          * this component, so we keep the model up to date by sending every update via an action.
          */
         handleInput: function (e) {
-            this.props.actions.setRenameValue(this.refs.name.getDOMNode().value.trim());
+            this.props.actions.setRenameValue(this.refs.name.value.trim());
 
             if (e.keyCode !== KeyEvent.DOM_VK_LEFT &&
                     e.keyCode !== KeyEvent.DOM_VK_RIGHT) {
                 // update the width of the input field
-                var domNode = this.refs.name.getDOMNode(),
+                var domNode = this.refs.name,
                     newWidth = _measureText(domNode.value);
                 $(domNode).width(newWidth);
             }
@@ -181,7 +183,7 @@ define(function (require, exports, module) {
             var fullname = this.props.name,
                 extension = LanguageManager.getCompoundFileExtension(fullname);
 
-            var node = this.refs.name.getDOMNode();
+            var node = this.refs.name;
             node.setSelectionRange(0, _getName(fullname, extension).length);
             ViewUtils.scrollElementIntoView($("#project-files-container"), $(node), true);
         },
@@ -362,7 +364,7 @@ define(function (require, exports, module) {
                 // start with project-files-container instead of just the interior of
                 // project-files-container and then the file tree will be one self-contained
                 // functional unit.
-                ViewUtils.scrollElementIntoView($("#project-files-container"), $(this.getDOMNode()), true);
+                //ViewUtils.scrollElementIntoView($("#project-files-container"), $(this), true);
             } else if (!isSelected && wasSelected && this.state.clickTimer !== null) {
                 this.clearTimer();
             }
@@ -554,7 +556,7 @@ define(function (require, exports, module) {
         componentDidMount: function () {
             var fullname = this.props.name;
 
-            var node = this.refs.name.getDOMNode();
+            var node = this.refs.name;
             node.setSelectionRange(0, fullname.length);
             ViewUtils.scrollElementIntoView($("#project-files-container"), $(node), true);
         },
@@ -810,7 +812,7 @@ define(function (require, exports, module) {
                 return;
             }
 
-            var node = this.getDOMNode(),
+            var node = this,
                 selectedNode = $(node.parentNode).find(this.props.selectedClassName),
                 selectionViewInfo = this.props.selectionViewInfo;
 
@@ -865,7 +867,7 @@ define(function (require, exports, module) {
                 return;
             }
 
-            var node = this.getDOMNode(),
+            var node = this,
                 selectedNode = $(node.parentNode).find(this.props.selectedClassName),
                 selectionViewInfo = this.props.selectionViewInfo;
 
@@ -1012,7 +1014,7 @@ define(function (require, exports, module) {
             return;
         }
 
-        React.render(fileTreeView({
+        ReactDOM.render(fileTreeView({
             treeData: viewModel.treeData,
             selectionViewInfo: viewModel.selectionViewInfo,
             sortDirectoriesFirst: viewModel.sortDirectoriesFirst,

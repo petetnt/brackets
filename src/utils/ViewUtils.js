@@ -28,7 +28,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _                   = require("thirdparty/lodash"),
+    var _                   = require("lodash"),
         LanguageManager     = require("language/LanguageManager");
 
     var SCROLL_SHADOW_HEIGHT = 5;

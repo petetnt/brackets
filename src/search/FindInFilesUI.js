@@ -52,7 +52,7 @@ define(function (require, exports, module) {
         Strings           = require("strings"),
         StringUtils       = require("utils/StringUtils"),
         HealthLogger      = require("utils/HealthLogger"),
-        _                 = require("thirdparty/lodash");
+        _                 = require("lodash");
 
 
     /** @const Maximum number of files to do replacements in-memory instead of on disk. */

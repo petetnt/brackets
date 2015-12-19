@@ -38,7 +38,7 @@ define(function (require, exports, module) {
         KeyEvent            = require("utils/KeyEvent"),
         SpecRunnerUtils     = require("spec/SpecRunnerUtils"),
         Strings             = require("strings"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     var platform = brackets.platform;
 

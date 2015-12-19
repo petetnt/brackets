@@ -32,7 +32,7 @@ define(function (require, exports, module) {
     var PreferencesBase         = require("preferences/PreferencesBase"),
         FileSystem              = require("filesystem/FileSystem"),
         SpecRunnerUtils         = require("spec/SpecRunnerUtils"),
-        _                       = require("thirdparty/lodash");
+        _                       = require("lodash");
 
     var testPath = SpecRunnerUtils.getTestPath("/spec/PreferencesBase-test-files");
 

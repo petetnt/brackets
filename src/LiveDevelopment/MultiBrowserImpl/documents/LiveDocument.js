@@ -31,7 +31,7 @@ define(function (require, exports, module) {
     var EditorManager       = require("editor/EditorManager"),
         EventDispatcher     = require("utils/EventDispatcher"),
         PreferencesManager  = require("preferences/PreferencesManager"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     /**
      * @const

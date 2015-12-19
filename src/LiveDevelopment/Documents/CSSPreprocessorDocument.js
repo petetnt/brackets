@@ -37,7 +37,7 @@
 define(function CSSPreprocessorDocumentModule(require, exports, module) {
     "use strict";
 
-    var _               = require("thirdparty/lodash"),
+    var _               = require("lodash"),
         EventDispatcher = require("utils/EventDispatcher"),
         CSSUtils        = require("language/CSSUtils"),
         EditorManager   = require("editor/EditorManager"),

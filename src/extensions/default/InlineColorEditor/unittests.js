@@ -32,12 +32,12 @@ define(function (require, exports, module) {
     var KeyEvent           = brackets.getModule("utils/KeyEvent"),
         PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
         SpecRunnerUtils    = brackets.getModule("spec/SpecRunnerUtils"),
+        tinycolor          = brackets.getModule("tinycolor"),
         testContentCSS     = require("text!unittest-files/unittests.css"),
         testContentHTML    = require("text!unittest-files/unittests.html"),
         provider           = require("main").inlineColorEditorProvider,
         InlineColorEditor  = require("InlineColorEditor").InlineColorEditor,
-        ColorEditor        = require("ColorEditor").ColorEditor,
-        tinycolor          = require("thirdparty/tinycolor-min");
+        ColorEditor        = require("ColorEditor").ColorEditor;
 
     describe("Inline Color Editor - unit", function () {
 

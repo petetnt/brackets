@@ -37,7 +37,7 @@ define(function CSSAgent(require, exports, module) {
 
     require("thirdparty/path-utils/path-utils.min");
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     var Inspector       = require("LiveDevelopment/Inspector/Inspector"),
         EventDispatcher = require("utils/EventDispatcher");

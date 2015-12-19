@@ -32,7 +32,7 @@ define(function (require, exports, module) {
 
     require("thirdparty/jquery.mockjax.js");
 
-    var _ = require("thirdparty/lodash");
+    var _ = require("lodash");
 
     var ExtensionManager          = require("extensibility/ExtensionManager"),
         ExtensionManagerView      = require("extensibility/ExtensionManagerView").ExtensionManagerView,

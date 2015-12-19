@@ -45,7 +45,7 @@ define(function (require, exports, module) {
         KeyEvent              = require("utils/KeyEvent"),
         paneListTemplate      = require("text!htmlContent/working-set.html"),
         Strings               = require("strings"),
-        _                     = require("thirdparty/lodash");
+        _                     = require("lodash");
 
     /**
      * Open view dictionary

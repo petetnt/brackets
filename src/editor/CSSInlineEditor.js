@@ -43,7 +43,7 @@ define(function (require, exports, module) {
         MultiRangeInlineEditor  = require("editor/MultiRangeInlineEditor"),
         Strings                 = require("strings"),
         ViewUtils               = require("utils/ViewUtils"),
-        _                       = require("thirdparty/lodash");
+        _                       = require("lodash");
 
     var _newRuleCmd,
         _newRuleHandlers = [];

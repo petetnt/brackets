@@ -8,7 +8,7 @@
 
 define(function (require, exports, module) {
     "use strict";
-    var CodeMirror  = brackets.getModule("thirdparty/CodeMirror/lib/codemirror"),
+    var CodeMirror  = brackets.getModule("codemirror/lib/codemirror"),
         cols        = CodeMirror.countColumn,
         pos         = CodeMirror.Pos;
 

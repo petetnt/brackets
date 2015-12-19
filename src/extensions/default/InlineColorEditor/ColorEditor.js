@@ -31,7 +31,7 @@ define(function (require, exports, module) {
         PreferencesManager = brackets.getModule("preferences/PreferencesManager"),
         StringUtils        = brackets.getModule("utils/StringUtils"),
         Strings            = brackets.getModule("strings"),
-        tinycolor          = require("thirdparty/tinycolor-min");
+        tinycolor          = require("tinycolor");    
 
     /** Mustache template that forms the bare DOM structure of the UI */
     var ColorEditorTemplate = require("text!ColorEditorTemplate.html");

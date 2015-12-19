@@ -30,7 +30,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _            = require("thirdparty/lodash"),
+    var _            = require("lodash"),
         StringUtils  = require("utils/StringUtils");
 
     // make sure the global brackets variable is loaded

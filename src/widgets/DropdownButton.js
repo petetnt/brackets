@@ -47,7 +47,7 @@ define(function (require, exports, module) {
         WorkspaceManager        = require("view/WorkspaceManager"),
         Menus                   = require("command/Menus"),
         ViewUtils               = require("utils/ViewUtils"),
-        _                       = require("thirdparty/lodash");
+        _                       = require("lodash");
 
     /**
      * Creates a single dropdown-button instance. The DOM node is created but not attached to

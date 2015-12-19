@@ -49,7 +49,7 @@
 define(function CSSDocumentModule(require, exports, module) {
     "use strict";
 
-    var _               = require("thirdparty/lodash"),
+    var _               = require("lodash"),
         EventDispatcher = require("utils/EventDispatcher"),
         CSSAgent        = require("LiveDevelopment/Agents/CSSAgent"),
         CSSUtils        = require("language/CSSUtils"),

@@ -36,7 +36,7 @@ define(function (require, exports, module) {
         ExtensionUtils      = brackets.getModule("utils/ExtensionUtils"),
         ColorUtils          = brackets.getModule("utils/ColorUtils"),
         Strings             = brackets.getModule("strings"),
-        _                   = brackets.getModule("thirdparty/lodash"),
+        _                   = brackets.getModule("lodash"),
         SVGTags             = require("text!SVGTags.json"),
         SVGAttributes       = require("text!SVGAttributes.json"),
         cachedAttributes    = {},

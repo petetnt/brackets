@@ -37,7 +37,7 @@ define(function (require, exports, module) {
         EventDispatcher     = require("utils/EventDispatcher"),
         Strings             = require("strings"),
         StringUtils         = require("utils/StringUtils"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     var nodeSearchDisabled = false,
         instantSearchDisabled = false,

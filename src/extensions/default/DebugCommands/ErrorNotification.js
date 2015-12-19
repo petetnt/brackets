@@ -27,7 +27,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    var _               = brackets.getModule("thirdparty/lodash"),
+    var _               = brackets.getModule("lodash"),
         AnimationUtils  = brackets.getModule("utils/AnimationUtils"),
         ExtensionUtils  = brackets.getModule("utils/ExtensionUtils"),
         Strings         = brackets.getModule("strings");

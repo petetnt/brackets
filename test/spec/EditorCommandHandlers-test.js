@@ -32,7 +32,7 @@ define(function (require, exports, module) {
         CommandManager  = require("command/CommandManager"),
         LanguageManager = require("language/LanguageManager"),
         SpecRunnerUtils = require("spec/SpecRunnerUtils"),
-        _               = require("thirdparty/lodash");
+        _               = require("lodash");
 
     require("editor/EditorCommandHandlers");
 

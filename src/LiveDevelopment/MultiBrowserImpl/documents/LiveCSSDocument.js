@@ -46,7 +46,7 @@
 define(function LiveCSSDocumentModule(require, exports, module) {
     "use strict";
 
-    var _               = require("thirdparty/lodash"),
+    var _               = require("lodash"),
         CSSUtils        = require("language/CSSUtils"),
         EventDispatcher = require("utils/EventDispatcher"),
         LiveDocument    = require("LiveDevelopment/MultiBrowserImpl/documents/LiveDocument");

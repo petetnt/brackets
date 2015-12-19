@@ -57,7 +57,7 @@ define(function (require, exports, module) {
         UrlParams           = require("utils/UrlParams").UrlParams,
         StatusBar           = require("widgets/StatusBar"),
         WorkspaceManager    = require("view/WorkspaceManager"),
-        _                   = require("thirdparty/lodash");
+        _                   = require("lodash");
 
     /**
      * Handlers for commands related to document handling (opening, saving, etc.)

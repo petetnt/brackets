@@ -43,7 +43,7 @@ define(function (require, exports, module) {
         FileSystem              = require("filesystem/FileSystem"),
         Strings                 = require("strings"),
         PreferencesImpl         = require("preferences/PreferencesImpl"),
-        _                       = require("thirdparty/lodash");
+        _                       = require("lodash");
 
     /**
      * The local storage ID

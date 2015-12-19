@@ -38,7 +38,7 @@ define(function (require, exports, module) {
         FileUtils               = require("file/FileUtils"),
         AppInit                 = require("utils/AppInit"),
         Strings                 = require("strings"),
-        _                       = require("thirdparty/lodash");
+        _                       = require("lodash");
 
     /**
      * List of sorting method objects

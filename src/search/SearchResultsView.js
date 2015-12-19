@@ -42,7 +42,7 @@ define(function (require, exports, module) {
         StringUtils           = require("utils/StringUtils"),
         Strings               = require("strings"),
         HealthLogger          = require("utils/HealthLogger"),
-        _                     = require("thirdparty/lodash"),
+        _                     = require("lodash"),
 
         searchPanelTemplate   = require("text!htmlContent/search-panel.html"),
         searchResultsTemplate = require("text!htmlContent/search-results.html"),
