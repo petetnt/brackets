@@ -58,6 +58,9 @@ define(function (require, exports, module) {
     require("codemirror/addon/search/searchcursor");
     require("codemirror/addon/selection/active-line");
     require("codemirror/addon/selection/mark-selection");
+    require("codemirror/addon/fold/brace-fold");
+    require("codemirror/addon/fold/comment-fold");
+    require("codemirror/addon/fold/markdown-fold");
     require("codemirror/keymap/sublime");
 
     // Load dependent modules

@@ -57,12 +57,7 @@ define(function (require, exports, module) {
         expandAllKeyMac         = "Cmd-Shift-1";
 
     ExtensionUtils.loadStyleSheet(module, "main.less");
-
-    // Load CodeMirror addons
-    brackets.getModule(["thirdparty/CodeMirror/addon/fold/brace-fold"]);
-    brackets.getModule(["thirdparty/CodeMirror/addon/fold/comment-fold"]);
-    brackets.getModule(["thirdparty/CodeMirror/addon/fold/markdown-fold"]);
-
+    
     // Still using slightly modified versions of the foldcode.js and foldgutter.js since we
     // need to modify the gutter click handler to take care of some collapse and expand features
     // e.g. collapsing all children when 'alt' key is pressed
