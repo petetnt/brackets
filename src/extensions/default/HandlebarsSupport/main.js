@@ -31,7 +31,7 @@ define(function (require, exports, module) {
     var LanguageManager = brackets.getModule("language/LanguageManager"),
         CodeMirror      = brackets.getModule("codemirror/lib/codemirror");
 
-    brackets.getModule(["thirdparty/CodeMirror/mode/handlebars/handlebars"], function () {
+    brackets.getModule(["codemirror/mode/handlebars/handlebars"], function () {
         CodeMirror.defineMode("htmlhandlebars", function (config) {
             return CodeMirror.multiplexingMode(
                 CodeMirror.getMode(config, "text/html"),
