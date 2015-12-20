@@ -52,8 +52,9 @@ require.config({
         "tinycolor":                 "../node_modules/tinycolor2/tinycolor",
         "jslint":                    "../node_modules/jslint/lib/jslint",
         "tern":                      "../node_modules/tern/lib/tern",
-        "acorn":                     "../node_modules/acord/dist/acorn",
-        "acorn_loose":               "../node_modules/acord/dist/acorn_loose",
+        "acorn":                     "../node_modules/acorn/dist/acorn",
+        "acorn_loose":               "../node_modules/acorn/dist/acorn_loose",
+        "semver.browser":            "../node_modules/semver/semver.browser",
         "codemirror":                "../node_modules/codemirror"
     },
     shim: {
