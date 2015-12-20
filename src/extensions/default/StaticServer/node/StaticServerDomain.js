@@ -25,13 +25,12 @@
 
 (function () {
     "use strict";
-
     var http     = require("http"),
         pathJoin = require("path").join,
-        connect  = require("connect"),
-        utils    = require("connect/lib/utils"),
-        mime     = require("connect/node_modules/send/node_modules/mime"),
-        parse    = utils.parseUrl;
+        connect  = null,
+        utils    = null,
+        mime     = null,
+        parse    = null;
 
     var _domainManager;
 
@@ -106,6 +105,18 @@
      */
     function getPathKey(path) {
         return PATH_KEY_PREFIX + normalizeRootPath(path);
+    }
+    
+    /**
+     * @private
+     * Loads third party dependencies using the global context
+     * @param {string} srcPath - absolute path to global brackets node folder
+     */
+    function _cmdLoadNodeModules(srcPath) {
+        connect  = require(srcPath + "connect");
+        utils    = require(srcPath + "connect/lib/utils");
+        mime     = require(srcPath + "mime");
+        parse    = utils.parseUrl;
     }
 
     /**
@@ -365,6 +376,21 @@
         if (!domainManager.hasDomain("staticServer")) {
             domainManager.registerDomain("staticServer", {major: 0, minor: 1});
         }
+        
+        _domainManager.registerCommand(
+            "staticServer",
+            "_loadNodeModules",
+            _cmdLoadNodeModules,
+            false,
+            "Loads node modules from Brackets modules",
+            [{
+                name: "srcPath",
+                type: "string",
+                description: "Absolute path to the src-folder"
+            }],
+            []
+        );          
+        
         _domainManager.registerCommand(
             "staticServer",
             "_setRequestFilterTimeout",

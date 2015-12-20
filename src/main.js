@@ -55,6 +55,8 @@ require.config({
         "acorn":                     "../node_modules/acorn/dist/acorn",
         "acorn_loose":               "../node_modules/acorn/dist/acorn_loose",
         "semver.browser":            "../node_modules/semver/semver.browser",
+        "connect":                   "../node_modules/connect",
+        "connect":                   "../node_modules/mime/mime",
         "codemirror":                "../node_modules/codemirror"
     },
     shim: {

@@ -53,6 +53,7 @@
     "acord": "^1.0.0",
     "classnames": "^2.2.1",
     "codemirror": "github:codemirror/CodeMirror#61ca2db",
+    "connect": "^2.9.0",
     "i18n": "github:requirejs/i18n",
     "immutable": "^3.7.6",
     "jquery": "^2.1.4",

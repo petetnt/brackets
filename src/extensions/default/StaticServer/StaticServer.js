@@ -32,7 +32,8 @@ define(function (require, exports, module) {
     var BaseServer           = brackets.getModule("LiveDevelopment/Servers/BaseServer").BaseServer,
         LiveDevelopmentUtils = brackets.getModule("LiveDevelopment/LiveDevelopmentUtils"),
         PreferencesManager   = brackets.getModule("preferences/PreferencesManager"),
-        Strings              = brackets.getModule("strings");
+        Strings              = brackets.getModule("strings"),
+        FileUtils            = brackets.getModule("file/FileUtils");
 
 
     /**
@@ -62,7 +63,6 @@ define(function (require, exports, module) {
     function StaticServer(config) {
         this._nodeDomain = config.nodeDomain;
         this._onRequestFilter = this._onRequestFilter.bind(this);
-
         BaseServer.call(this, config);
     }
 
@@ -135,6 +135,8 @@ define(function (require, exports, module) {
         }
 
         var port = sanitizePort(_prefs.get("port"));
+        var nodeModulesPath = FileUtils.getNativeBracketsDirectoryPath() + "/../node_modules/";
+        this._nodeDomain.exec("_loadNodeModules", nodeModulesPath);
 
         this._nodeDomain.exec("getServer", self._root, port)
             .done(function (address) {
