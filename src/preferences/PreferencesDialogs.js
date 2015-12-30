@@ -32,7 +32,7 @@
 define(function (require, exports, module) {
     "use strict";
 
-    require("thirdparty/path-utils/path-utils.min");
+    require("path-utils");
 
     var Dialogs                = require("widgets/Dialogs"),
         ProjectManager         = require("project/ProjectManager"),

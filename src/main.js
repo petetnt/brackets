@@ -56,7 +56,8 @@ require.config({
         "acorn_loose":               "../node_modules/acorn/dist/acorn_loose",
         "semver.browser":            "../node_modules/semver/semver.browser",
         "connect":                   "../node_modules/connect",
-        "connect":                   "../node_modules/mime/mime",
+        "mime":                      "../node_modules/mime/mime",
+        "path-utils":                "../node_modules/jblas-path-utils/path-utils.min",
         "codemirror":                "../node_modules/codemirror"
     },
     shim: {
@@ -112,13 +113,14 @@ define(function (require) {
     "use strict";
 
     // Load compatibility shims--these need to load early, be careful moving this
-    require(["jquery", "mustache", "less", "utils/Compatibility"], function (jQuery, Mustache, less) {
+    require(["jquery", "mustache", "less", "path-utils", "utils/Compatibility"], function (jQuery, Mustache, less, PathUtils) {
         // Load the brackets module. This is a self-running module that loads and runs the entire application.
         
         // These should be required instead of exposed as globals
         window.$ = window.jQuery = jQuery;
         window.Mustache = Mustache;
         window.less = less;
+        window.PathUtils = PathUtils;
         
         require(["brackets"]);
     });

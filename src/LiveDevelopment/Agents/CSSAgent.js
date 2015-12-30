@@ -35,7 +35,7 @@
 define(function CSSAgent(require, exports, module) {
     "use strict";
 
-    require("thirdparty/path-utils/path-utils.min");
+    require("path-utils");
 
     var _ = require("lodash");
 

@@ -39,7 +39,7 @@ define(function (require, exports, module) {
     "use strict";
 
     // Load dependent non-module scripts
-    require("thirdparty/path-utils/path-utils.min");
+    require("path-utils");
     require("widgets/bootstrap-dropdown");
     require("widgets/bootstrap-modal");
     require("widgets/bootstrap-twipsy-mod");
