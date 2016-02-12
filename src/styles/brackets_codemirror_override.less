@@ -21,6 +21,7 @@
 /* Brackets / CodeMirror Code Formatting */
 
 @code-padding: 15px;
+@codemirror-lines-min-width: 140px;
 
 .CodeMirror pre {
     padding: 0 @code-padding 0 0;
@@ -237,6 +238,13 @@ div.CodeMirror-cursors {
     
     .CodeMirror-sizer {
         cursor: text;
+    }
+
+    .CodeMirror-line {
+        /* Add min-width to ensure that content can be readable despite of wrapping
+         * see #12178
+         */
+        min-width: @codemirror-lines-min-width;
     }
     
     .CodeMirror .CodeMirror-vscrollbar, .CodeMirror .CodeMirror-hscrollbar {
