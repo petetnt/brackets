@@ -150,14 +150,17 @@ define(function (require, exports, module) {
         _baseFileExtensionToLanguageMap = {},
         _fileExtensionToLanguageMap     = Object.create(_baseFileExtensionToLanguageMap),
         _fileNameToLanguageMap          = {},
-        _filePathToLanguageMap          = {},
         _modeToLanguageMap              = {},
+        _tmpFilePathLanguageMapForUnitTests = {}, // Used to persist file path language map between unit tests
         _ready;
 
     // Constants
 
     var _EXTENSION_MAP_PREF = "language.fileExtensions",
         _NAME_MAP_PREF      = "language.fileNames";
+    
+    // Constants in state.json
+    var _USER_LANGUAGE_OVERRIDES = "language.userLanguageOverrides";
 
     // Tracking for changes to mappings made by preferences
     var _prefState = {};
@@ -244,7 +247,7 @@ define(function (require, exports, module) {
     function getLanguage(id) {
         return _languages[id];
     }
-
+    
     /**
      * Resolves a file extension to a Language object.
      * *Warning:* it is almost always better to use getLanguageForPath(), since Language can depend
@@ -257,6 +260,49 @@ define(function (require, exports, module) {
     }
 
     /**
+     * @private
+     * Resolves a file path to a Language object stored in state.
+     * @param {string} path Path to the file to find a langauge for
+     *                      
+     * @returns {Language} The language for the provided file path if available or undefined
+     */
+    function _getLanguageFromLanguageMap(path) {
+        var userLanguageOverrides = PreferencesManager.getViewState(_USER_LANGUAGE_OVERRIDES);
+        
+        if (userLanguageOverrides[path]) {
+            return getLanguage(userLanguageOverrides[path]);
+        }
+    }
+    
+    /**
+     * Adds a language override to a file path stored in state
+     * @param {string} path Path to the file to store a language override to
+     * @param {Language} langauge The lanaguage for the provided file path.
+     */
+    
+    function _addLanguageToLanguageMap(path, langauge) {
+        var userLanguageOverrides = PreferencesManager.getViewState(_USER_LANGUAGE_OVERRIDES);
+        userLanguageOverrides[path] = langauge._id;
+        PreferencesManager.setViewState(_USER_LANGUAGE_OVERRIDES, userLanguageOverrides);
+    }
+    
+    /**
+     * @private
+     * Deletes a file path from user language overrides in state if exists
+     * @param {string} path Path to the file to delete a langauge for
+     */
+    function _deleteLanguageFromLanguageMap(path) {
+        var userLanguageOverrides = PreferencesManager.getViewState(_USER_LANGUAGE_OVERRIDES);
+        
+        if (userLanguageOverrides[path]) {
+            delete userLanguageOverrides[path];
+            
+            PreferencesManager.setViewState(_USER_LANGUAGE_OVERRIDES, userLanguageOverrides);
+        }
+        
+    }
+    
+    /**
      * Resolves a file path to a Language object.
      * @param {!string} path Path to the file to find a language for
      * @param {?boolean} ignoreOverride If set to true will cause the lookup to ignore any
@@ -266,10 +312,11 @@ define(function (require, exports, module) {
      */
     function getLanguageForPath(path, ignoreOverride) {
         var fileName,
-            language = _filePathToLanguageMap[path],
+            language = _getLanguageFromLanguageMap(path),
             extension,
             parts;
 
+        console.log(language);
         // if there's an override, return it
         if (!ignoreOverride && language) {
             return language;
@@ -381,9 +428,9 @@ define(function (require, exports, module) {
     function setLanguageOverrideForPath(fullPath, language) {
         var oldLang = getLanguageForPath(fullPath);
         if (!language) {
-            delete _filePathToLanguageMap[fullPath];
+            _deleteLanguageFromLanguageMap(fullPath);
         } else {
-            _filePathToLanguageMap[fullPath] = language;
+            _addLanguageToLanguageMap(fullPath, language);
         }
         var newLang = getLanguageForPath(fullPath);
 
@@ -394,10 +441,18 @@ define(function (require, exports, module) {
     }
 
     /**
-     * Resets all the language overrides for file paths. Used by unit tests only.
+     * Resets the state back to normal. Used by unit tests only.
      */
     function _resetPathLanguageOverrides() {
-        _filePathToLanguageMap = {};
+        PreferencesManager.setViewState(_USER_LANGUAGE_OVERRIDES, _tmpFilePathLanguageMapForUnitTests);
+    }
+
+    /**
+     * Removes all the language overrides for file paths. Used by unit tests only.
+     */
+    function _removePathLanguageOverrides() {
+        _tmpFilePathLanguageMapForUnitTests = PreferencesManager.getViewState(_USER_LANGUAGE_OVERRIDES);
+        PreferencesManager.setViewState(_USER_LANGUAGE_OVERRIDES, {});
     }
 
     /**
@@ -1155,15 +1210,19 @@ define(function (require, exports, module) {
             }).on("change", function () {
                 _updateFromPrefs(_NAME_MAP_PREF);
             });
+            
+            pm.stateManager.definePreference(_USER_LANGUAGE_OVERRIDES, "object", {});
+            
             _updateFromPrefs(_EXTENSION_MAP_PREF);
             _updateFromPrefs(_NAME_MAP_PREF);
         });
     });
 
     // Private for unit tests
-    exports._EXTENSION_MAP_PREF         = _EXTENSION_MAP_PREF;
-    exports._NAME_MAP_PREF              = _NAME_MAP_PREF;
-    exports._resetPathLanguageOverrides = _resetPathLanguageOverrides;
+    exports._EXTENSION_MAP_PREF          = _EXTENSION_MAP_PREF;
+    exports._NAME_MAP_PREF               = _NAME_MAP_PREF;
+    exports._resetPathLanguageOverrides  = _resetPathLanguageOverrides;
+    exports._removePathLanguageOverrides = _removePathLanguageOverrides;
 
     // Public methods
     exports.ready                       = _ready;
